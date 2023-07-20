@@ -1,0 +1,48 @@
+.App-logo {
+    height: 10em;
+    pointer-events: none;
+}
+
+h1 {
+    font-size: xx-large;
+    margin: 0;
+}
+
+.text {
+    margin: 0;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #222;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: coin-bounce-spin infinite 16s ease-in-out;
+    }
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes coin-bounce-spin {
+    0% {
+        transform: rotate(-30deg);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+    75% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(-30deg);
+    }
+}

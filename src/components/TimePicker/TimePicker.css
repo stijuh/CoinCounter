@@ -1,0 +1,74 @@
+.description {
+    display: flex;
+    background-color: #55596b;
+    border: gray 2px solid;
+    border-radius: 0.7rem;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem
+}
+
+/* ################ TIME ################ */
+input[type=time] {
+    border: none;
+    border-radius: 1rem;
+    background-color: #8a95ab;
+
+    color: #55596b;
+    font-size: 14px;
+    font-family: helvetica, serif;
+    width: 12.5rem;
+    padding: 0.2rem;
+}
+
+/* Wrapper around the hour, minute, second, and am/pm fields as well as
+the up and down buttons and the 'X' button */
+input[type=time]::-webkit-datetime-edit-fields-wrapper {
+    display: flex;
+}
+
+/* The space between the fields - between hour and minute, the minute and
+second, second and am/pm */
+input[type=time]::-webkit-datetime-edit-text {
+    padding: 19px 4px;
+}
+
+/* The naming convention for the hour, minute, second, and am/pm field is the following:
+`-webkit-datetime-edit-{field}-field`
+Why, you ask? because God himself has shunned these HTML/CSS conventions.
+*/
+
+/* Hour */
+input[type=time]::-webkit-datetime-edit-hour-field {
+    background-color: #bdcee8;
+    border-radius: 20%;
+    padding: 19px 13px;
+}
+
+/* Minute */
+/*noinspection CssInvalidPseudoSelector*/
+input[type=time]::-webkit-datetime-edit-minute-field {
+    background-color: #bdcee8;
+    border-radius: 20%;
+    padding: 19px 13px;
+}
+
+/* AM/PM */
+/*noinspection CssInvalidPseudoSelector*/
+input[type=time]::-webkit-datetime-edit-ampm-field {
+    background-color: rgb(225, 173, 1);
+    border-radius: 15%;
+    color: #fff;
+    padding: 19px 13px;
+}
+
+/* 'X' button for resetting/clearing time */
+input[type=time]::-webkit-clear-button {
+    display: none;
+}
+
+/* Up/Down arrows for incrementing/decrementing the value */
+input[type=time]::-webkit-inner-spin-button {
+    display: none;
+}

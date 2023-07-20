@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.moneyMoney {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    width: 20rem;
+    height: 10rem;
+
+    background-color: #575757;
+    border: gray 2px solid;
+    border-radius: 1rem;
+    padding: 5px;
+    margin: 1rem;
+
+    font-size: 5rem;
+}
