@@ -56,13 +56,12 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
             <div>
                 <CoinButton text={"Get ready"} onClick={this.toggleModal}></CoinButton>
 
-                {isOpen && (
-                <div className="modal">
-                    <div className="modal-content">
+                <div className={"modal" + (isOpen ? " active" : "")}>
+                    <div className={"modal-content" + (isOpen ? " active" : "")}>
                         <span className="close" onClick={this.toggleModal}>&times;</span>
 
-                        <label>Earned per hour:
-                            <input type="number" placeholder="0" onChange={this.handleCoinsPerHourChange} />
+                        <label className={"hourDescription"} >Earned per hour:
+                            <input className={"hourInput"} type="number" placeholder="0" onChange={this.handleCoinsPerHourChange} />
                         </label>
 
                         <div className={"timePickers"}>
@@ -75,7 +74,7 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
                         <CoinButton text={"Let's make some money!"} onClick={this.makeSomeMoney}></CoinButton>
                     </div>
                 </div>
-                )}
+
             </div>
         );
     }

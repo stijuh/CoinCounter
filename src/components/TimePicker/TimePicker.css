@@ -6,20 +6,21 @@
     padding: 5px;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem
+    margin: 1rem 1rem 1rem 0;
 }
 
 /* ################ TIME ################ */
 input[type=time] {
     border: none;
-    border-radius: 1rem;
+    border-radius: 15px;
     background-color: #8a95ab;
 
     color: #55596b;
     font-size: 14px;
     font-family: helvetica, serif;
-    width: 12.5rem;
-    padding: 0.2rem;
+    width: 13rem;
+    padding: 0.3rem;
+    margin-left: 1rem;
 }
 
 /* Wrapper around the hour, minute, second, and am/pm fields as well as
@@ -42,7 +43,7 @@ Why, you ask? because God himself has shunned these HTML/CSS conventions.
 /* Hour */
 input[type=time]::-webkit-datetime-edit-hour-field {
     background-color: #bdcee8;
-    border-radius: 20%;
+    border-radius: 13px;
     padding: 19px 13px;
 }
 
@@ -50,7 +51,7 @@ input[type=time]::-webkit-datetime-edit-hour-field {
 /*noinspection CssInvalidPseudoSelector*/
 input[type=time]::-webkit-datetime-edit-minute-field {
     background-color: #bdcee8;
-    border-radius: 20%;
+    border-radius: 13px;
     padding: 19px 13px;
 }
 
@@ -58,9 +59,22 @@ input[type=time]::-webkit-datetime-edit-minute-field {
 /*noinspection CssInvalidPseudoSelector*/
 input[type=time]::-webkit-datetime-edit-ampm-field {
     background-color: rgb(225, 173, 1);
-    border-radius: 15%;
+    border-radius: 13px;
     color: #fff;
     padding: 19px 13px;
+}
+
+input[type=time]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    font-size: x-large;
+    opacity: 0.5;
+    filter: invert(79%) sepia(62%) saturate(5244%) hue-rotate(15deg) brightness(105%) contrast(102%);
+}
+
+input[type=time]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1
 }
 
 /* 'X' button for resetting/clearing time */

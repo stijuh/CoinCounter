@@ -8,9 +8,26 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     grid-gap: 10px;
 }
 
-
-@media (max-width: 575px) {
+@media (max-width: 720px) {
     .timePickers {  grid-template-columns: auto;}
+    .modal-content {
+        width: 90%;
+    }
+}
+
+.hourDescription {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hourInput {
+    background-color: #575757;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-left: 1rem;
 }
 
 .modal {
@@ -19,17 +36,35 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    opacity: 0;
+    pointer-events: none; /* Prevent interactions with hidden modal */
+    transition: all 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .modal-content {
     background-color: rgb(0, 0, 0);
     padding: 20px;
-    border-radius: 5rem;
+    border-radius: 3rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    transform: scale(0.5);
+    transition: all 0.3s ease;
+}
+
+.modal-content.active {
+    transform: scale(1);
+    pointer-events: auto;
 }
 
 .close {
