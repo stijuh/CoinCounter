@@ -4,19 +4,32 @@ import TimePicker from "../../TimePicker/TimePicker";
 import CoinButton from "../../Common/CoinButton";
 
 interface CoinCounterInputUpdate {
-    readyForMoneyMaking: (eurosPerHour: number) => void;
+    readyForMoneyMaking: (
+        eurosPerHour: number,
+        times: {startTime: Date; endTime: Date; breakFromTime: Date; breakToTime: Date; }
+    ) => void;
 }
 
 interface CoinCounterInputState {
     eurosPerHour: number;
+    times: {
+        startTime: Date;
+        endTime: Date;
+        breakFromTime: Date;
+        breakToTime: Date;
+    }
     isOpen: boolean;
 }
-
 
 const startTimeId = "startTime"
 const endTimeId = "endTime"
 const breakFromTimeId = "breakFromTime"
 const breakToTimeId = "breakToTime"
+
+const startDefault = new Date(2000, 1, 1,9,0, 0);
+const endDefault = new Date(2000, 1, 1,17,0, 0);
+const breakFromDefault = new Date(2000, 1, 1, 12, 30);
+const breakToDefault = new Date(2000, 1, 1,13,0, 0);
 
 export default class CoinCounterInput extends Component<CoinCounterInputUpdate, CoinCounterInputState> {
 
@@ -24,6 +37,12 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
         super(props);
         this.state = {
             eurosPerHour: 0,
+            times: {
+                startTime: startDefault,
+                endTime: endDefault,
+                breakFromTime: breakFromDefault,
+                breakToTime: breakToDefault,
+            },
             isOpen: false
         };
     }
@@ -40,12 +59,33 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
     };
 
     handleTimeChange = (event: ChangeEvent<HTMLInputElement>, identifier: string) => {
-        const time = String(event.target.value);
-        console.log(identifier, time)
+        const time = String(event.target.value); // expecting it in the format of 00:00 (hours:minutes).
+        let timeList = time.split(":")
+
+        let dateComparison = new Date(2000, 1, 1,0,0, 0);
+        dateComparison.setHours(parseInt(timeList[0]), parseInt(timeList[1]), 0)
+
+        switch (identifier) {
+            case startTimeId:
+                this.state.times.startTime = dateComparison;
+                break;
+            case endTimeId:
+                this.state.times.endTime = dateComparison;
+                break;
+            case breakFromTimeId:
+                this.state.times.breakFromTime = dateComparison;
+                break;
+            case breakToTimeId:
+                this.state.times.breakToTime = dateComparison;
+                break;
+        }
+
+        this.setState(this.state)
+        //TODO: persist the time state in localstorage so it isn't reset every refresh.
     };
 
     makeSomeMoney = () => {
-        this.props.readyForMoneyMaking(this.state.eurosPerHour);
+        this.props.readyForMoneyMaking(this.state.eurosPerHour, this.state.times);
         this.toggleModal();
     }
 
@@ -56,7 +96,7 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
             <div>
                 <CoinButton text={"Get ready"} onClick={this.toggleModal}></CoinButton>
 
-                <div className={"modal" + (isOpen ? " active" : "")} onClick={this.toggleModal}>
+                <div className={"modal" + (isOpen ? " active" : "")}>
                     <div className={"modal-content" + (isOpen ? " active" : "")}>
                         <span className="close" onClick={this.toggleModal}>&times;</span>
 
