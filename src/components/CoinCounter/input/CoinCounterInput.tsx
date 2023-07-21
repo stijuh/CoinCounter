@@ -56,7 +56,7 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
             <div>
                 <CoinButton text={"Get ready"} onClick={this.toggleModal}></CoinButton>
 
-                <div className={"modal" + (isOpen ? " active" : "")}>
+                <div className={"modal" + (isOpen ? " active" : "")} onClick={this.toggleModal}>
                     <div className={"modal-content" + (isOpen ? " active" : "")}>
                         <span className="close" onClick={this.toggleModal}>&times;</span>
 
