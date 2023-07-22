@@ -17,7 +17,7 @@ footer {
   bottom: 0;
   display: flex;
   justify-content: center;
-  height: 4%;
+  height: 3%;
 }
 
 a.studioStoyLink {
@@ -80,411 +80,411 @@ a.studioStoyLink:active {
 }
 
 .g-bubble:nth-child(0) {
-  left: 29%;
-  top: 37px;
-  width: 48px;
-  height: 48px;
-  animation: moveToTop 5.78s ease-in-out -0.79s infinite;
+  left: 25%;
+  top: 128px;
+  width: 75px;
+  height: 75px;
+  animation: moveToTop 5.38s ease-in-out -0.893s infinite;
 }
 
 .g-bubble:nth-child(1) {
-  left: 32%;
-  top: 71px;
-  width: 40px;
-  height: 40px;
-  animation: moveToTop 10s ease-in-out -0.201s infinite;
+  left: 12%;
+  top: 34px;
+  width: 65px;
+  height: 65px;
+  animation: moveToTop 9.91s ease-in-out -0.394s infinite;
 }
 
 .g-bubble:nth-child(2) {
-  left: 73%;
-  top: 117px;
-  width: 93px;
-  height: 93px;
-  animation: moveToTop 6.47s ease-in-out -0.786s infinite;
+  left: 6%;
+  top: 72px;
+  width: 108px;
+  height: 108px;
+  animation: moveToTop 5.28s ease-in-out -0.021s infinite;
 }
 
 .g-bubble:nth-child(3) {
-  left: 19%;
-  top: 103px;
-  width: 78px;
-  height: 78px;
-  animation: moveToTop 6.33s ease-in-out -1.035s infinite;
+  left: 86%;
+  top: 82px;
+  width: 76px;
+  height: 76px;
+  animation: moveToTop 7.05s ease-in-out -0.822s infinite;
 }
 
 .g-bubble:nth-child(4) {
-  left: 70%;
-  top: 73px;
-  width: 61px;
-  height: 61px;
-  animation: moveToTop 5.34s ease-in-out -1.394s infinite;
+  left: 50%;
+  top: 78px;
+  width: 129px;
+  height: 129px;
+  animation: moveToTop 5.39s ease-in-out -1.858s infinite;
 }
 
 .g-bubble:nth-child(5) {
-  left: 37%;
-  top: 38px;
-  width: 100px;
-  height: 100px;
-  animation: moveToTop 8.85s ease-in-out -1.27s infinite;
+  left: 51%;
+  top: 87px;
+  width: 115px;
+  height: 115px;
+  animation: moveToTop 6.75s ease-in-out -1.478s infinite;
 }
 
 .g-bubble:nth-child(6) {
-  left: 72%;
-  top: 100px;
-  width: 90px;
-  height: 90px;
-  animation: moveToTop 5.08s ease-in-out -1.559s infinite;
+  left: 93%;
+  top: 76px;
+  width: 74px;
+  height: 74px;
+  animation: moveToTop 8.26s ease-in-out -1.036s infinite;
 }
 
 .g-bubble:nth-child(7) {
-  left: 28%;
-  top: 58px;
-  width: 94px;
-  height: 94px;
-  animation: moveToTop 7.01s ease-in-out -0.988s infinite;
+  left: 80%;
+  top: 102px;
+  width: 88px;
+  height: 88px;
+  animation: moveToTop 9.97s ease-in-out -1.373s infinite;
 }
 
 .g-bubble:nth-child(8) {
-  left: 69%;
-  top: 72px;
-  width: 80px;
-  height: 80px;
-  animation: moveToTop 6.19s ease-in-out -0.829s infinite;
+  left: 100%;
+  top: 66px;
+  width: 124px;
+  height: 124px;
+  animation: moveToTop 6.05s ease-in-out -0.682s infinite;
 }
 
 .g-bubble:nth-child(9) {
-  left: 48%;
-  top: 57px;
-  width: 94px;
-  height: 94px;
-  animation: moveToTop 5.76s ease-in-out -0.835s infinite;
+  left: 17%;
+  top: 59px;
+  width: 116px;
+  height: 116px;
+  animation: moveToTop 7.53s ease-in-out -0.915s infinite;
 }
 
 .g-bubble:nth-child(10) {
-  left: 10%;
-  top: 45px;
-  width: 102px;
-  height: 102px;
-  animation: moveToTop 6.98s ease-in-out -0.351s infinite;
+  left: 75%;
+  top: 59px;
+  width: 119px;
+  height: 119px;
+  animation: moveToTop 8.95s ease-in-out -0.093s infinite;
 }
 
 .g-bubble:nth-child(11) {
-  left: 29%;
-  top: 59px;
-  width: 60px;
-  height: 60px;
-  animation: moveToTop 7.3s ease-in-out -0.709s infinite;
+  left: 25%;
+  top: 42px;
+  width: 91px;
+  height: 91px;
+  animation: moveToTop 9.9s ease-in-out -0.054s infinite;
 }
 
 .g-bubble:nth-child(12) {
-  left: 33%;
-  top: 69px;
-  width: 115px;
-  height: 115px;
-  animation: moveToTop 6.93s ease-in-out -1.901s infinite;
+  left: 34%;
+  top: 70px;
+  width: 105px;
+  height: 105px;
+  animation: moveToTop 7.13s ease-in-out -1.503s infinite;
 }
 
 .g-bubble:nth-child(13) {
-  left: 5%;
-  top: 120px;
-  width: 41px;
-  height: 41px;
-  animation: moveToTop 5.46s ease-in-out -0.45s infinite;
+  left: 60%;
+  top: 119px;
+  width: 74px;
+  height: 74px;
+  animation: moveToTop 9.09s ease-in-out -0.686s infinite;
 }
 
 .g-bubble:nth-child(14) {
-  left: 91%;
-  top: 86px;
-  width: 116px;
-  height: 116px;
-  animation: moveToTop 7.69s ease-in-out -1.779s infinite;
+  left: 13%;
+  top: 45px;
+  width: 76px;
+  height: 76px;
+  animation: moveToTop 9.15s ease-in-out -0.261s infinite;
 }
 
 .g-bubble:nth-child(15) {
-  left: 4%;
-  top: 88px;
-  width: 91px;
-  height: 91px;
-  animation: moveToTop 7.23s ease-in-out -0.56s infinite;
+  left: 20%;
+  top: 56px;
+  width: 84px;
+  height: 84px;
+  animation: moveToTop 6.8s ease-in-out -1.22s infinite;
 }
 
 .g-bubble:nth-child(16) {
-  left: 89%;
-  top: 65px;
-  width: 35px;
-  height: 35px;
-  animation: moveToTop 9.12s ease-in-out -0.329s infinite;
+  left: 69%;
+  top: 88px;
+  width: 94px;
+  height: 94px;
+  animation: moveToTop 8.72s ease-in-out -1.758s infinite;
 }
 
 .g-bubble:nth-child(17) {
-  left: 81%;
-  top: 101px;
-  width: 75px;
-  height: 75px;
-  animation: moveToTop 9.95s ease-in-out -1.089s infinite;
+  left: 25%;
+  top: 104px;
+  width: 58px;
+  height: 58px;
+  animation: moveToTop 7.86s ease-in-out -1.537s infinite;
 }
 
 .g-bubble:nth-child(18) {
-  left: 57%;
-  top: 54px;
-  width: 98px;
-  height: 98px;
-  animation: moveToTop 5.92s ease-in-out -1.569s infinite;
+  left: 4%;
+  top: 67px;
+  width: 95px;
+  height: 95px;
+  animation: moveToTop 7.98s ease-in-out -0.841s infinite;
 }
 
 .g-bubble:nth-child(19) {
-  left: 80%;
-  top: 115px;
-  width: 105px;
-  height: 105px;
-  animation: moveToTop 7.47s ease-in-out -0.749s infinite;
+  left: 40%;
+  top: 109px;
+  width: 83px;
+  height: 83px;
+  animation: moveToTop 9.18s ease-in-out -1.272s infinite;
 }
 
 .g-bubble:nth-child(20) {
-  left: 74%;
-  top: 65px;
-  width: 127px;
-  height: 127px;
-  animation: moveToTop 5.42s ease-in-out -0.891s infinite;
+  left: 2%;
+  top: 34px;
+  width: 60px;
+  height: 60px;
+  animation: moveToTop 8.32s ease-in-out -0.608s infinite;
 }
 
 .g-bubble:nth-child(21) {
-  left: 52%;
-  top: 37px;
-  width: 84px;
-  height: 84px;
-  animation: moveToTop 8.07s ease-in-out -0.81s infinite;
+  left: 51%;
+  top: 31px;
+  width: 92px;
+  height: 92px;
+  animation: moveToTop 6.66s ease-in-out -1.14s infinite;
 }
 
 .g-bubble:nth-child(22) {
-  left: 92%;
-  top: 111px;
-  width: 35px;
-  height: 35px;
-  animation: moveToTop 9.76s ease-in-out -0.072s infinite;
+  left: 13%;
+  top: 42px;
+  width: 84px;
+  height: 84px;
+  animation: moveToTop 5.45s ease-in-out -1.271s infinite;
 }
 
 .g-bubble:nth-child(23) {
-  left: 19%;
-  top: 50px;
-  width: 105px;
-  height: 105px;
-  animation: moveToTop 5.49s ease-in-out -0.467s infinite;
+  left: 88%;
+  top: 111px;
+  width: 58px;
+  height: 58px;
+  animation: moveToTop 6.8s ease-in-out -0.013s infinite;
 }
 
 .g-bubble:nth-child(24) {
-  left: 28%;
-  top: 57px;
-  width: 115px;
-  height: 115px;
-  animation: moveToTop 9.45s ease-in-out -0.221s infinite;
+  left: 15%;
+  top: 36px;
+  width: 36px;
+  height: 36px;
+  animation: moveToTop 6.13s ease-in-out -1.341s infinite;
 }
 
 .g-bubble:nth-child(25) {
-  left: 62%;
-  top: 123px;
-  width: 41px;
-  height: 41px;
-  animation: moveToTop 8.76s ease-in-out -1.343s infinite;
+  left: 99%;
+  top: 78px;
+  width: 121px;
+  height: 121px;
+  animation: moveToTop 8.13s ease-in-out -0.71s infinite;
 }
 
 .g-bubble:nth-child(26) {
-  left: 30%;
-  top: 53px;
-  width: 36px;
-  height: 36px;
-  animation: moveToTop 8.81s ease-in-out -0.997s infinite;
+  left: 82%;
+  top: 82px;
+  width: 126px;
+  height: 126px;
+  animation: moveToTop 8.17s ease-in-out -0.063s infinite;
 }
 
 .g-bubble:nth-child(27) {
-  left: 92%;
-  top: 102px;
-  width: 83px;
-  height: 83px;
-  animation: moveToTop 6.44s ease-in-out -0.347s infinite;
+  left: 98%;
+  top: 81px;
+  width: 44px;
+  height: 44px;
+  animation: moveToTop 6.11s ease-in-out -0.813s infinite;
 }
 
 .g-bubble:nth-child(28) {
-  left: 100%;
-  top: 94px;
-  width: 100px;
-  height: 100px;
-  animation: moveToTop 7.79s ease-in-out -1.776s infinite;
+  left: 43%;
+  top: 90px;
+  width: 112px;
+  height: 112px;
+  animation: moveToTop 5.49s ease-in-out -0.299s infinite;
 }
 
 .g-bubble:nth-child(29) {
-  left: 9%;
-  top: 115px;
-  width: 51px;
-  height: 51px;
-  animation: moveToTop 8.82s ease-in-out -0.903s infinite;
-}
-
-.g-bubble:nth-child(30) {
-  left: 31%;
-  top: 39px;
-  width: 110px;
-  height: 110px;
-  animation: moveToTop 6.41s ease-in-out -0.708s infinite;
-}
-
-.g-bubble:nth-child(31) {
-  left: 31%;
-  top: 94px;
-  width: 92px;
-  height: 92px;
-  animation: moveToTop 6.32s ease-in-out -1.456s infinite;
-}
-
-.g-bubble:nth-child(32) {
-  left: 45%;
-  top: 82px;
-  width: 116px;
-  height: 116px;
-  animation: moveToTop 5.72s ease-in-out -0.937s infinite;
-}
-
-.g-bubble:nth-child(33) {
-  left: 80%;
-  top: 102px;
-  width: 63px;
-  height: 63px;
-  animation: moveToTop 8.6s ease-in-out -0.199s infinite;
-}
-
-.g-bubble:nth-child(34) {
-  left: 83%;
-  top: 40px;
-  width: 93px;
-  height: 93px;
-  animation: moveToTop 8.27s ease-in-out -1.977s infinite;
-}
-
-.g-bubble:nth-child(35) {
-  left: 76%;
-  top: 100px;
-  width: 90px;
-  height: 90px;
-  animation: moveToTop 7.54s ease-in-out -0.54s infinite;
-}
-
-.g-bubble:nth-child(36) {
-  left: 87%;
-  top: 47px;
-  width: 118px;
-  height: 118px;
-  animation: moveToTop 9.18s ease-in-out -1.472s infinite;
-}
-
-.g-bubble:nth-child(37) {
-  left: 73%;
-  top: 46px;
-  width: 66px;
-  height: 66px;
-  animation: moveToTop 8.8s ease-in-out -1.702s infinite;
-}
-
-.g-bubble:nth-child(38) {
-  left: 45%;
-  top: 41px;
-  width: 51px;
-  height: 51px;
-  animation: moveToTop 7.62s ease-in-out -0.7s infinite;
-}
-
-.g-bubble:nth-child(39) {
-  left: 21%;
-  top: 110px;
-  width: 91px;
-  height: 91px;
-  animation: moveToTop 8.69s ease-in-out -1.039s infinite;
-}
-
-.g-bubble:nth-child(40) {
-  left: 98%;
-  top: 89px;
-  width: 88px;
-  height: 88px;
-  animation: moveToTop 5.86s ease-in-out -1.675s infinite;
-}
-
-.g-bubble:nth-child(41) {
-  left: 24%;
-  top: 81px;
-  width: 37px;
-  height: 37px;
-  animation: moveToTop 9.08s ease-in-out -0.329s infinite;
-}
-
-.g-bubble:nth-child(42) {
-  left: 32%;
-  top: 58px;
-  width: 53px;
-  height: 53px;
-  animation: moveToTop 6.77s ease-in-out -1.134s infinite;
-}
-
-.g-bubble:nth-child(43) {
-  left: 76%;
-  top: 36px;
-  width: 109px;
-  height: 109px;
-  animation: moveToTop 5.87s ease-in-out -0.398s infinite;
-}
-
-.g-bubble:nth-child(44) {
-  left: 69%;
-  top: 118px;
-  width: 82px;
-  height: 82px;
-  animation: moveToTop 7.17s ease-in-out -0.868s infinite;
-}
-
-.g-bubble:nth-child(45) {
-  left: 89%;
-  top: 37px;
-  width: 74px;
-  height: 74px;
-  animation: moveToTop 6.86s ease-in-out -1.232s infinite;
-}
-
-.g-bubble:nth-child(46) {
-  left: 28%;
-  top: 86px;
-  width: 74px;
-  height: 74px;
-  animation: moveToTop 6.57s ease-in-out -1.076s infinite;
-}
-
-.g-bubble:nth-child(47) {
-  left: 71%;
+  left: 3%;
   top: 104px;
   width: 51px;
   height: 51px;
-  animation: moveToTop 9.08s ease-in-out -0.683s infinite;
+  animation: moveToTop 8.74s ease-in-out -0.727s infinite;
+}
+
+.g-bubble:nth-child(30) {
+  left: 62%;
+  top: 74px;
+  width: 122px;
+  height: 122px;
+  animation: moveToTop 6.47s ease-in-out -0.043s infinite;
+}
+
+.g-bubble:nth-child(31) {
+  left: 50%;
+  top: 85px;
+  width: 40px;
+  height: 40px;
+  animation: moveToTop 5.55s ease-in-out -1.503s infinite;
+}
+
+.g-bubble:nth-child(32) {
+  left: 25%;
+  top: 76px;
+  width: 70px;
+  height: 70px;
+  animation: moveToTop 5.96s ease-in-out -1.054s infinite;
+}
+
+.g-bubble:nth-child(33) {
+  left: 55%;
+  top: 115px;
+  width: 65px;
+  height: 65px;
+  animation: moveToTop 9.81s ease-in-out -1.805s infinite;
+}
+
+.g-bubble:nth-child(34) {
+  left: 78%;
+  top: 88px;
+  width: 35px;
+  height: 35px;
+  animation: moveToTop 8.52s ease-in-out -1.276s infinite;
+}
+
+.g-bubble:nth-child(35) {
+  left: 46%;
+  top: 99px;
+  width: 34px;
+  height: 34px;
+  animation: moveToTop 6.48s ease-in-out -1.279s infinite;
+}
+
+.g-bubble:nth-child(36) {
+  left: 90%;
+  top: 96px;
+  width: 70px;
+  height: 70px;
+  animation: moveToTop 9.8s ease-in-out -1.933s infinite;
+}
+
+.g-bubble:nth-child(37) {
+  left: 12%;
+  top: 60px;
+  width: 108px;
+  height: 108px;
+  animation: moveToTop 7.56s ease-in-out -0.728s infinite;
+}
+
+.g-bubble:nth-child(38) {
+  left: 42%;
+  top: 104px;
+  width: 104px;
+  height: 104px;
+  animation: moveToTop 6.27s ease-in-out -0.973s infinite;
+}
+
+.g-bubble:nth-child(39) {
+  left: 77%;
+  top: 100px;
+  width: 92px;
+  height: 92px;
+  animation: moveToTop 9.31s ease-in-out -1.253s infinite;
+}
+
+.g-bubble:nth-child(40) {
+  left: 61%;
+  top: 92px;
+  width: 109px;
+  height: 109px;
+  animation: moveToTop 6.4s ease-in-out -1.047s infinite;
+}
+
+.g-bubble:nth-child(41) {
+  left: 26%;
+  top: 120px;
+  width: 70px;
+  height: 70px;
+  animation: moveToTop 9.58s ease-in-out -0.338s infinite;
+}
+
+.g-bubble:nth-child(42) {
+  left: 69%;
+  top: 101px;
+  width: 75px;
+  height: 75px;
+  animation: moveToTop 5.23s ease-in-out -0.389s infinite;
+}
+
+.g-bubble:nth-child(43) {
+  left: 14%;
+  top: 38px;
+  width: 69px;
+  height: 69px;
+  animation: moveToTop 5.96s ease-in-out -0.72s infinite;
+}
+
+.g-bubble:nth-child(44) {
+  left: 44%;
+  top: 61px;
+  width: 100px;
+  height: 100px;
+  animation: moveToTop 7.85s ease-in-out -0.332s infinite;
+}
+
+.g-bubble:nth-child(45) {
+  left: 94%;
+  top: 116px;
+  width: 81px;
+  height: 81px;
+  animation: moveToTop 7.28s ease-in-out -1.485s infinite;
+}
+
+.g-bubble:nth-child(46) {
+  left: 96%;
+  top: 98px;
+  width: 57px;
+  height: 57px;
+  animation: moveToTop 9.1s ease-in-out -0.481s infinite;
+}
+
+.g-bubble:nth-child(47) {
+  left: 69%;
+  top: 75px;
+  width: 48px;
+  height: 48px;
+  animation: moveToTop 5.4s ease-in-out -0.674s infinite;
 }
 
 .g-bubble:nth-child(48) {
-  left: 13%;
-  top: 75px;
-  width: 57px;
-  height: 57px;
-  animation: moveToTop 5.63s ease-in-out -1.417s infinite;
+  left: 68%;
+  top: 126px;
+  width: 32px;
+  height: 32px;
+  animation: moveToTop 5.35s ease-in-out -1.21s infinite;
 }
 
 .g-bubble:nth-child(49) {
-  left: 50%;
-  top: 118px;
-  width: 44px;
-  height: 44px;
-  animation: moveToTop 7.64s ease-in-out -1.311s infinite;
+  left: 17%;
+  top: 87px;
+  width: 92px;
+  height: 92px;
+  animation: moveToTop 6.49s ease-in-out -1.799s infinite;
 }
 
 .g-bubble:nth-child(50) {
-  left: 69%;
-  top: 75px;
-  width: 111px;
-  height: 111px;
-  animation: moveToTop 6.02s ease-in-out -0.873s infinite;
+  left: 18%;
+  top: 128px;
+  width: 74px;
+  height: 74px;
+  animation: moveToTop 7.6s ease-in-out -1.181s infinite;
 }
 
 @keyframes moveToTop {
