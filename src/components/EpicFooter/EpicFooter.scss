@@ -3,7 +3,7 @@
 }
 
 footer {
-  width:100%;
+  width: 100%;
 }
 
 .g-container {
@@ -13,6 +13,7 @@ footer {
 
 .date {
   width: 100%;
+  font-size: 20px;
   position: absolute;
   bottom: 0;
   display: flex;
@@ -85,9 +86,9 @@ a.studioStoyLink:active {
 
 @for $i from 0 through 50 {
   .g-bubble:nth-child(#{$i}) {
-    $width: 30 + random(100) + px;
+    $width: 50 + random(100) + px;
     left: #{(random(100)) + '%'};
-    top: #{(30 + random(100))}px;
+    top: #{(10 + random(100))}px;
     width: $width;
     height: $width;
     animation: moveToTop #{(random(500) + 500) / 100}s ease-in-out -#{random(2000)/1000}s infinite;
