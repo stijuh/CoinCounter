@@ -65,7 +65,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .close {
-    position: absolute;
+    position: relative;
     top: -10px;
     cursor: pointer;
     font-size: 24px;
@@ -73,11 +73,13 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     color: #888;
 }
 
+.close:hover {
+    color: var(--backgroundColor);
+}
 
 @media (max-width: 720px) {
     .timePickers {  grid-template-columns: auto;}
     .modal-content {
         width: 90%;
     }
-
 }
