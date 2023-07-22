@@ -23,15 +23,27 @@ export default class CoinCounterMoney extends Component<CoinCounterState, MoneyS
     startInterval() {
         const { eurosPerHour, times } = this.props;
         this.interval = setInterval(() => {
-            let hoursWorked = 0;
-            let currentTime = new Date();
+            let hoursWorked = 0, currentTime = new Date();
 
-            if (currentTime > this.timedDate(times.endTime))
-                hoursWorked = this.getTimeDifference(times.startTime, times.endTime);
-            else if (currentTime < this.timedDate(times.startTime))
+            // It is after the specified end time.
+            if (currentTime > this.timedDate(times.endTime)) {
+                hoursWorked = this.getTimeDifferenceInHours(times.startTime, times.endTime);
+            }
+            // It is before the specified start time.
+            else if (currentTime < this.timedDate(times.startTime)) {
                 hoursWorked = 0;
-            else
-                hoursWorked = this.getTimeDifference(times.startTime, currentTime);
+            }
+            // It is during the specified break time.
+            else if (this.timedDate(times.breakFromTime) < currentTime && currentTime < this.timedDate(times.breakToTime)) {
+                // Take the hours of startTime till breakFromTime.
+                hoursWorked = this.getTimeDifferenceInHours(times.startTime, times.breakFromTime)
+            // It is after the specified break time but still work time.
+            } else if (currentTime > this.timedDate(times.breakToTime)) {
+                hoursWorked = this.getTimeDifferenceInHours(times.startTime, times.breakFromTime) +
+                    this.getTimeDifferenceInHours(times.breakToTime, currentTime);
+            } else {
+                hoursWorked = this.getTimeDifferenceInHours(times.startTime, currentTime);
+            }
 
             this.setState(() => ({
                 money: (hoursWorked * eurosPerHour)
@@ -45,7 +57,7 @@ export default class CoinCounterMoney extends Component<CoinCounterState, MoneyS
         }
     }
 
-    getTimeDifference(firstDate: Date, secondDate: Date) {
+    getTimeDifferenceInHours(firstDate: Date, secondDate: Date) {
         const first = this.timedDate(firstDate)
         let firstTime = first.getTime();
 
