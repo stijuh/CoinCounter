@@ -7,12 +7,9 @@
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  overflow: hidden;
 }
 
 .content {
   flex: 1 0 auto;
-}
-
-footer {
-  flex-shrink: 0;
 }

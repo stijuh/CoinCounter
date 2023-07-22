@@ -1,11 +1,28 @@
 import React from "react";
-import "./EpicFooter.css"
+import "./EpicFooter.scss"
 
 function EpicFooter() {
     return (
-        <div>
-            <a className="App-link" href="https://studiostoy.nl">$tudio $toy</a>
-        </div>
+        <footer>
+            <span className={"date"}>@2023</span>
+
+            <div className={"foot"}>
+                <div className="g-container">
+                    <div className="g-wrap">
+                        <div className="g-footer">
+                            {(() => {
+                                return Array.from(
+                                    { length: 50 },
+                                    (_, i) => (<div key={"bubble-" + i} className="g-bubble"></div>)
+                                );
+                            })()}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a className={"studioStoyLink"} href="https://studiostoy.nl" target="_blank">$tudio $toy</a>
+        </footer>
     );
 }
 

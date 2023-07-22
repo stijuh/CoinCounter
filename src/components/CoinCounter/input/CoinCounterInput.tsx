@@ -65,22 +65,23 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
         let dateComparison = new Date(2000, 1, 1,0,0, 0);
         dateComparison.setHours(parseInt(timeList[0]), parseInt(timeList[1]), 0)
 
+        const {times} = this.state
         switch (identifier) {
             case startTimeId:
-                this.state.times.startTime = dateComparison;
+                times.startTime = dateComparison;
                 break;
             case endTimeId:
-                this.state.times.endTime = dateComparison;
+                times.endTime = dateComparison;
                 break;
             case breakFromTimeId:
-                this.state.times.breakFromTime = dateComparison;
+                times.breakFromTime = dateComparison;
                 break;
             case breakToTimeId:
-                this.state.times.breakToTime = dateComparison;
+                times.breakToTime = dateComparison;
                 break;
         }
 
-        this.setState(this.state)
+        this.setState({times} )
         //TODO: persist the time state in localstorage so it isn't reset every refresh.
     };
 

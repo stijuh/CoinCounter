@@ -9,7 +9,7 @@ class CoinCounter extends Component<{}, CoinCounterState> {
         super(props);
         this.state = {
             eurosPerHour: 0,
-            times: {breakFromTime: new Date, breakToTime: new Date, endTime: new Date, startTime: new Date}
+            times: {breakFromTime: new Date(), breakToTime: new Date(), endTime: new Date(), startTime: new Date()}
         };
     }
 

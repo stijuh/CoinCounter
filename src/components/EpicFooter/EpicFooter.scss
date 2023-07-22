@@ -1,0 +1,77 @@
+:root {
+  --backgroundColor: #c58500;
+}
+
+.foot {
+  width:100%;
+}
+
+.g-container {
+  width: 100%;
+  height: 100%;
+}
+
+a.studioStoyLink {
+  display: inline-block;
+  position: relative;
+  top: -1.5rem;
+  text-decoration: none;
+
+  background-color: var(--backgroundColor);
+  color: white;
+
+  padding: 15px 25px;
+  border-radius: 10px;
+  transition: background-color 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+a.studioStoyLink:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: darkgray;
+}
+
+.g-footer {
+  position: absolute;
+  margin-top: -3.5rem;
+  left: 0;
+  height: 8rem;
+  width: 100%;
+  background: var(--backgroundColor);
+  filter: blur(5px);
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+  }
+}
+
+.g-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--backgroundColor);
+}
+
+@for $i from 0 through 50 {
+  .g-bubble:nth-child(#{$i}) {
+    $width: 30 + random(100) + px;
+    left: #{(random(100)) + '%'};
+    top: #{(30 + random(100))}px;
+    width: $width;
+    height: $width;
+    animation: moveToTop #{(random(500) + 500) / 100}s ease-in-out -#{random(2000)/1000}s infinite;
+  }
+}
+
+@keyframes moveToTop {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .08;
+    transform: translate(-50%, -120px) scale(.3);
+  }
+}

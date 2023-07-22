@@ -7,17 +7,13 @@ import CoinCounter from "./components/CoinCounter/CoinCounter";
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                <EpicHeader/>
-            </header>
+            <EpicHeader/>
 
             <main className="content">
                 <CoinCounter/>
             </main>
 
-            <footer>
-                <EpicFooter/>
-            </footer>
+            <EpicFooter/>
         </div>
     );
 }
