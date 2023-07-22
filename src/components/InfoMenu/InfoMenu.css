@@ -1,0 +1,52 @@
+:root {
+    --backgroundColor: #c58500;
+}
+
+.info-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+}
+
+.info-modal-content {
+    background-color: rgb(42, 42, 42);
+    padding: 20px;
+    border-radius: 3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    transform: scale(0.75);
+    transition: all 0.3s ease;
+}
+
+.reasons-to-enlist {
+    content: "\2713";
+    list-style-type: square;
+}
+
+.listen-up {
+    color: var(--backgroundColor);
+}
+
+ul li {
+    list-style-type: "\2713";
+
+    position: relative;
+    padding: 3px 15px 2px 25px;
+    margin: 15px;
+    background-color: var(--backgroundColor);
+    border-radius: 25px;
+}
+
+.information {
+    width:80%;
+    margin-left: 10%;
+}
