@@ -4,7 +4,7 @@ import "./EpicFooter.scss"
 function EpicFooter() {
     return (
         <footer>
-            <span className={"date"}>@2023</span>
+            {/*<span className={"date"}>@2023</span>*/}
 
             <div className={"foot"}>
                 <div className="g-container">
