@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {CoinCounterState, MoneyState} from "../domain/CoinCounterModels";
 import "./CoinCounterMoney.css"
 
@@ -13,7 +13,7 @@ export default class CoinCounterMoney extends Component<CoinCounterState, MoneyS
     }
 
     componentDidUpdate(prevProps: CoinCounterState) {
-        const { eurosPerHour } = this.props;
+        const {eurosPerHour} = this.props;
         if (eurosPerHour !== prevProps.eurosPerHour) {
             this.stopInterval();
             this.startInterval();
@@ -21,13 +21,14 @@ export default class CoinCounterMoney extends Component<CoinCounterState, MoneyS
     }
 
     startInterval() {
-        const { eurosPerHour, times } = this.props;
+        const {eurosPerHour, times} = this.props;
         this.interval = setInterval(() => {
             let hoursWorked = 0, currentTime = new Date();
 
             // It is after the specified end time.
             if (currentTime > this.timedDate(times.endTime)) {
                 hoursWorked = this.getTimeDifferenceInHours(times.startTime, times.endTime);
+                hoursWorked -= this.getTimeDifferenceInHours(times.breakFromTime, times.breakToTime);
             }
             // It is before the specified start time.
             else if (currentTime < this.timedDate(times.startTime)) {
@@ -37,7 +38,7 @@ export default class CoinCounterMoney extends Component<CoinCounterState, MoneyS
             else if (this.timedDate(times.breakFromTime) < currentTime && currentTime < this.timedDate(times.breakToTime)) {
                 // Take the hours of startTime till breakFromTime.
                 hoursWorked = this.getTimeDifferenceInHours(times.startTime, times.breakFromTime)
-            // It is after the specified break time but still work time.
+                // It is after the specified break time but still work time.
             } else if (currentTime > this.timedDate(times.breakToTime)) {
                 hoursWorked = this.getTimeDifferenceInHours(times.startTime, times.breakFromTime) +
                     this.getTimeDifferenceInHours(times.breakToTime, currentTime);
@@ -76,7 +77,7 @@ export default class CoinCounterMoney extends Component<CoinCounterState, MoneyS
     }
 
     render() {
-        const { money } = this.state;
+        const {money} = this.state;
 
         return (
             <div className={"wrapper"}>
