@@ -2,8 +2,11 @@ import React, {Component} from 'react';
 import {CoinCounterState} from "./domain/CoinCounterModels";
 import CoinCounterInput from "./input/CoinCounterInput";
 import CoinCounterMoney from "./money/CoinCounterMoney";
+// import CoinCounterLap from "./money/CoinCounterLap";
 
-class CoinCounter extends Component<{}, CoinCounterState> {
+import "./CoinCounter.css"
+
+export default class CoinCounter extends Component<{}, CoinCounterState> {
 
     constructor(props: {}) {
         super(props);
@@ -26,10 +29,12 @@ class CoinCounter extends Component<{}, CoinCounterState> {
         return (
             <>
                 <CoinCounterMoney eurosPerHour={this.state.eurosPerHour} times={this.state.times}/>
-                <CoinCounterInput readyForMoneyMaking={this.handleStateUpdate}/>
+
+                <div className={"buttons"}>
+                    <CoinCounterInput readyForMoneyMaking={this.handleStateUpdate}/>
+                    {/*<CoinCounterLap></CoinCounterLap>*/}
+                </div>
             </>
         );
     }
 }
-
-export default CoinCounter;

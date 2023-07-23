@@ -78,7 +78,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 @media (max-width: 720px) {
-    .timePickers {  grid-template-columns: auto;}
+    .timePickers {
+        grid-template-columns: auto;
+    }
+
     .modal-content {
         width: 90%;
     }

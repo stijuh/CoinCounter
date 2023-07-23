@@ -6,7 +6,7 @@ interface CoinButtonProps {
     onClick: () => void;
 }
 
-const Button: React.FC<CoinButtonProps> = ({ text, onClick }) => {
+const Button: React.FC<CoinButtonProps> = ({text, onClick}) => {
     return (
         <button className="coin-button" onClick={onClick}>
             {text}

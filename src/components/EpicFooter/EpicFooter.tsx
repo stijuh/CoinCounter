@@ -9,7 +9,7 @@ function EpicFooter() {
                     <div className="g-footer">
                         {(() => {
                             return Array.from(
-                                { length: 50 },
+                                {length: 50},
                                 (_, i) => (<div key={"bubble-" + i} className="g-bubble"></div>)
                             );
                         })()}
