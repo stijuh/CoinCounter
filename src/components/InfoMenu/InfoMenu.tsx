@@ -11,7 +11,6 @@ export default class InfoMenu extends Component<CloseHandler, {}> {
     }
 
     componentDidMount() {
-        // Add event listener when the component mounts
         window.addEventListener('keydown', this.handleKeyDown);
     }
 
@@ -21,9 +20,7 @@ export default class InfoMenu extends Component<CloseHandler, {}> {
     }
 
     handleKeyDown = (event: KeyboardEvent) => {
-        // Check if the pressed key is "Esc" (key code 27)
         if (event.key === "Escape") {
-            // Call the function to close the modal
             this.props.handleClose();
         }
     };

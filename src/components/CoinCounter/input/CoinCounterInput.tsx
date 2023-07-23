@@ -32,12 +32,25 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
     }
 
     componentDidMount() {
+        window.addEventListener('keydown', this.handleKeyDown);
+
         try {
             this.updateSalaryFromLocalStorage()
             this.updateTimesFromLocalStorage()
         } catch {
         }
     }
+
+    componentWillUnmount() {
+        // Remove event listener when the component unmounts to prevent memory leaks
+        window.removeEventListener('keydown', this.handleKeyDown);
+    }
+
+    handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === "Escape") {
+            this.closeModal();
+        }
+    };
 
     /* ### Retrieving and setting data from localstorage. ### */
     updateTimesFromLocalStorage() {
@@ -106,6 +119,12 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
             isOpen: !prevState.isOpen
         }));
     };
+
+    closeModal = () => {
+        this.setState(() => ({
+            isOpen: false
+        }));
+    }
 
     render() {
         const {isOpen, times, earnedPerHour} = this.state;
