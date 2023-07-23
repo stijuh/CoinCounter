@@ -28,13 +28,18 @@ export default class EpicHeader extends Component<{}, InfoMenuModalState> {
         }));
     };
 
+    handleKeyDownEvent = (event:any) => {
+        if (event.key === "Enter")
+            this.toggleInfo();
+    }
+
     render() {
         const {isOpen} = this.state;
 
         return (
             <>
                 <header>
-                    <div className={"logo"} onClick={this.toggleInfo}>
+                    <div className={"logo"} tabIndex={0} onKeyDown={this.handleKeyDownEvent} onClick={this.toggleInfo}>
                         <img src={logo} className="App-logo" alt="logo"/>
                     </div>
                     <p className="text">Because time is money!</p>

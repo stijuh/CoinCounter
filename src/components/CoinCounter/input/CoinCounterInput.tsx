@@ -46,13 +46,19 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
         window.removeEventListener('keydown', this.handleKeyDown);
     }
 
-    handleKeyDown = (event: KeyboardEvent) => {
+    handleKeyDown = (event: any) => {
         if (event.key === "Escape") {
             this.closeModal();
         }
     };
 
-    /* ### Retrieving and setting data from localstorage. ### */
+    handleCloseKeyDown = (event: any) => {
+        if (event.key === "Enter"){
+            this.closeModal();
+        }
+    }
+
+        /* ### Retrieving and setting data from localstorage. ### */
     updateTimesFromLocalStorage() {
         let savedTimes = localStorage.getItem('times')
         if (savedTimes !== undefined) {
@@ -139,8 +145,8 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
                 <CoinButton text={"Get ready"} onClick={this.toggleModal}></CoinButton>
 
                 <div className={"modal" + (isOpen ? " active" : "")}>
-                    <div className={"modal-content" + (isOpen ? " active" : "")}>
-                        <span className="close" onClick={this.toggleModal}>&times;</span>
+                    <div style={{visibility : (isOpen ? "visible" : "hidden")}} className={"modal-content" + (isOpen ? " active" : "")}>
+                        <span className="close" onKeyDown={this.handleCloseKeyDown} onClick={this.toggleModal} tabIndex={0}>&times;</span>
 
                         <label className={"hourDescription"}>Earned per hour:
                             <input className={"hourInput"} type="number" placeholder="0" value={salary}
