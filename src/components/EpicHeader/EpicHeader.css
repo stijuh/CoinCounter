@@ -9,6 +9,10 @@
     transform: scale(1.1);
 }
 
+.logo:active {
+    transform: scale(0.9);
+}
+
 .App-logo {
     pointer-events: none;
     height: 10em;
