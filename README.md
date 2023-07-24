@@ -1,46 +1,17 @@
-# Getting Started with Create React App
+# Coin Counter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Are you tired of slogging through mountains of mundane tasks like some kind of unfortunate desk-bound Olympian?
+- Do you crave a monetary carrot dangling in front of your nose, urging you to rise above the sea of mediocrity?
+- Are you an aspiring millionaire or a penny-pincher on the brink of a financial revolution?
 
-## Available Scripts
+### If the above applies to you, then listen up, because we've got the answer you've been waiting for!
 
-In the project directory, you can run:
+Welcome, all you monetary-focused bean counters, to the spectacular world of **Coin Counter**! This ain't your run-of-the-mill mundane accountancy application, Oh no! It's a glorious symphony of capitalism and productivity, designed to keep those gears turning while you rake in the dough!
 
-### `npm start`
+Say goodbye to your mediocre existence and hello to the life of a monetarily stimulated titan! With the **Coin Counter**, you're not just some ordinary war hero, no sir! You're a profit-pursuing, number-crunching, task-conquering dynamo!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Besides, who needs peace and tranquility when you can have constant reminders of your financial inadequacy?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Cave Johnson, we're done here.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+See the live version at https://coin-counter.studiostoy.nl
