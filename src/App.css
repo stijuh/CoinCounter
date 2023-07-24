@@ -13,3 +13,31 @@
 .content {
   flex: 1 0 auto;
 }
+
+/* Scroll bar stylings */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #71798d;
+
+  /* this under here is basically a hack to remove the track */
+  border-top: 20rem solid transparent;
+  border-bottom: 20rem solid transparent;
+  background-clip: padding-box;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #F90;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffae00;
+}

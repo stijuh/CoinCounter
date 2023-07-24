@@ -1,6 +1,6 @@
 import React, {Component, JSX} from 'react';
 import "./CoinCounterLap.css"
-import {generateItemsInHTML} from "../../../methods/methods";
+import {generateItemsInHTML, getTimeDifferenceFormatted} from "../../../methods/methods";
 import {LapTime} from "../domain/ModelImplementations";
 import {CoinCounterLapProps, CoinCounterLapState} from "../domain/CoinCounterModels";
 
@@ -41,12 +41,17 @@ export default class CoinCounterLap extends Component<CoinCounterLapProps, CoinC
 
         let lapItems: Array<JSX.Element> = lapTimes.map((lap,i) => {
             return <li className={"lap-item"}>
-                <span>
-                {lap.date.toLocaleTimeString()} |
-                this lap: €{(lap.currentMoney - lap.lastLapMoney).toFixed(2)},
-                total: €{lap.currentMoney.toFixed(2)}
+                <span className={"lap-time"}>
+                    { lap.date.toLocaleTimeString() } | { getTimeDifferenceFormatted(lapTimes[i-1]?.date, lap.date) }
                 </span>
-                <span className="remove" onClick={(e) => this.handleRemoveLapTime(e, i)} tabIndex={0}>&times;</span>
+
+                <span className={"lap-money"}>
+                    This lap: €{(lap.currentMoney - lap.lastLapMoney).toFixed(2)},
+                    total: €{lap.currentMoney.toFixed(2)}
+                </span>
+                <span className="lap-remove" onClick={(e) => this.handleRemoveLapTime(e, i)}>
+                    &times;
+                </span>
             </li>
         });
 
