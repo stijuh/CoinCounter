@@ -57,7 +57,7 @@ export default class CoinCounterLap extends Component<CoinCounterLapProps, CoinC
 
         return (
             <>
-                <span className={"lapContainer" + (lapTimes.length >= 3 ? " scrollable" : "")}>
+                <span className={"lapContainer"}>
                     <ul className={"laps"}>
                         {generateItemsInHTML(lapTimes.length, undefined, lapItems)}
                     </ul>

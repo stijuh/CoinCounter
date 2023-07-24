@@ -16,7 +16,7 @@
     font-size: 5rem;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 730px) {
     .moneyMoney {
         width: 16rem;
         height: 8rem;

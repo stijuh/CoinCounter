@@ -14,7 +14,7 @@
   flex: 1 0 auto;
 }
 
-/* Scroll bar stylings */
+/* Scroll bar styling */
 ::-webkit-scrollbar {
   width: 10px;
 }
