@@ -29,7 +29,7 @@
 
 .reasons-to-enlist {
     content: "\2713";
-    list-style-type: square;
+    list-style-type: "\2713";
 }
 
 .listen-up {

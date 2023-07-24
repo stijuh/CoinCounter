@@ -1,4 +1,11 @@
-.buttons {
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.user-input {
     display: flex;
     justify-content: space-evenly;
 }

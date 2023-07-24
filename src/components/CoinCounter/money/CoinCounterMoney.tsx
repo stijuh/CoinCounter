@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
-import {CoinCounterState, MoneyState} from "../domain/CoinCounterModels";
+import {CoinCounterProps, MoneyState} from "../domain/CoinCounterModels";
 import "./CoinCounterMoney.css"
 
-export default class CoinCounterMoney extends Component<CoinCounterState, MoneyState> {
+export default class CoinCounterMoney extends Component<CoinCounterProps, MoneyState> {
     private interval: NodeJS.Timeout | undefined;
 
-    constructor(props: CoinCounterState) {
+    constructor(props: CoinCounterProps) {
         super(props);
         this.state = {
-            money: 0,
-        };
+            money: 0
+        }
     }
 
-    componentDidUpdate(prevProps: CoinCounterState) {
+    componentDidUpdate(prevProps: CoinCounterProps) {
         const {eurosPerHour} = this.props;
         if (eurosPerHour !== prevProps.eurosPerHour) {
             this.stopInterval();
@@ -23,7 +23,7 @@ export default class CoinCounterMoney extends Component<CoinCounterState, MoneyS
     startInterval() {
         const {eurosPerHour, times} = this.props;
         this.interval = setInterval(() => {
-            let hoursWorked = 0, currentTime = new Date();
+            let hoursWorked: number, currentTime = new Date();
 
             // It is after the specified end time.
             if (currentTime > this.timedDate(times.endTime)) {
@@ -46,9 +46,9 @@ export default class CoinCounterMoney extends Component<CoinCounterState, MoneyS
                 hoursWorked = this.getTimeDifferenceInHours(times.startTime, currentTime);
             }
 
-            this.setState(() => ({
-                money: (hoursWorked * eurosPerHour)
-            }));
+            let money: number = (hoursWorked * eurosPerHour)
+            this.props.updateMoney(money)
+            this.setState({money});
         }, 1000);
     }
 

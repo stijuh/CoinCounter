@@ -1,5 +1,6 @@
 import React from "react";
 import "./EpicFooter.scss"
+import {generateItemsInHTML} from "../../methods/methods";
 
 function EpicFooter() {
     return (
@@ -7,12 +8,7 @@ function EpicFooter() {
             <div className="g-container">
                 <div className="g-wrap">
                     <div className="g-footer">
-                        {(() => {
-                            return Array.from(
-                                {length: 50},
-                                (_, i) => (<div key={"bubble-" + i} className="g-bubble"></div>)
-                            );
-                        })()}
+                        {generateItemsInHTML(50, (<div key={"bubble"} className="g-bubble"></div>))}
                     </div>
                 </div>
             </div>
