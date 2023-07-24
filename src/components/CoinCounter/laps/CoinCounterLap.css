@@ -1,0 +1,80 @@
+.lapContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    width: 20rem;
+    height: 10rem;
+
+    background-color: #575757;
+    border: gray 2px solid;
+
+    border-radius: 1rem;
+    padding: 5px;
+    margin: 1rem;
+    font-size: 5rem;
+    overflow-y: scroll;
+
+}
+
+.laps {
+    margin: 0;
+    padding: 0;
+    font-size: large;
+    text-align: start;
+
+    width: 100%;
+}
+
+.lap-item {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    "time time time remove"
+    "money money money remove";
+
+    text-align: center;
+    list-style: none;
+    padding: 0 10px;
+    margin: 3px 0;
+}
+
+.lap-item .lap-time {
+    grid-area: time;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 2;
+}
+
+.lap-item .lap-money {
+    grid-area: money;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 4;
+}
+
+.lap-item .lap-remove {
+    grid-area: remove;
+    grid-row-start: 1;
+    grid-column-start: 4;
+    grid-row-end: 3;
+    grid-column-end: 5;
+
+    margin-top: 0.4rem;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.lap-remove:hover {
+    color: #888;
+}
+
+@media (max-width: 730px) {
+    .lapContainer {
+        width: 16rem;
+        height: 8rem;
+    }
+}

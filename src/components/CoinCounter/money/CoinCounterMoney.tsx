@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
-import {CoinCounterState, MoneyState} from "../domain/CoinCounterModels";
+import {CoinCounterProps, MoneyState} from "../domain/CoinCounterModels";
 import "./CoinCounterMoney.css"
+import {getTimeDifferenceInHours, timedDate} from "../../../methods/methods";
 
-export default class CoinCounterMoney extends Component<CoinCounterState, MoneyState> {
+export default class CoinCounterMoney extends Component<CoinCounterProps, MoneyState> {
     private interval: NodeJS.Timeout | undefined;
 
-    constructor(props: CoinCounterState) {
+    constructor(props: CoinCounterProps) {
         super(props);
         this.state = {
-            money: 0,
-        };
+            money: 0
+        }
     }
 
-    componentDidUpdate(prevProps: CoinCounterState) {
+    componentDidUpdate(prevProps: CoinCounterProps) {
         const {eurosPerHour} = this.props;
         if (eurosPerHour !== prevProps.eurosPerHour) {
             this.stopInterval();
@@ -23,32 +24,32 @@ export default class CoinCounterMoney extends Component<CoinCounterState, MoneyS
     startInterval() {
         const {eurosPerHour, times} = this.props;
         this.interval = setInterval(() => {
-            let hoursWorked = 0, currentTime = new Date();
+            let hoursWorked: number, currentTime = new Date();
 
             // It is after the specified end time.
-            if (currentTime > this.timedDate(times.endTime)) {
-                hoursWorked = this.getTimeDifferenceInHours(times.startTime, times.endTime);
-                hoursWorked -= this.getTimeDifferenceInHours(times.breakFromTime, times.breakToTime);
+            if (currentTime > timedDate(times.endTime)) {
+                hoursWorked = getTimeDifferenceInHours(times.startTime, times.endTime);
+                hoursWorked -= getTimeDifferenceInHours(times.breakFromTime, times.breakToTime);
             }
             // It is before the specified start time.
-            else if (currentTime < this.timedDate(times.startTime)) {
+            else if (currentTime < timedDate(times.startTime)) {
                 hoursWorked = 0;
             }
             // It is during the specified break time.
-            else if (this.timedDate(times.breakFromTime) < currentTime && currentTime < this.timedDate(times.breakToTime)) {
+            else if (timedDate(times.breakFromTime) < currentTime && currentTime < timedDate(times.breakToTime)) {
                 // Take the hours of startTime till breakFromTime.
-                hoursWorked = this.getTimeDifferenceInHours(times.startTime, times.breakFromTime)
+                hoursWorked = getTimeDifferenceInHours(times.startTime, times.breakFromTime)
                 // It is after the specified break time but still work time.
-            } else if (currentTime > this.timedDate(times.breakToTime)) {
-                hoursWorked = this.getTimeDifferenceInHours(times.startTime, times.breakFromTime) +
-                    this.getTimeDifferenceInHours(times.breakToTime, currentTime);
+            } else if (currentTime > timedDate(times.breakToTime)) {
+                hoursWorked = getTimeDifferenceInHours(times.startTime, times.breakFromTime) +
+                    getTimeDifferenceInHours(times.breakToTime, currentTime);
             } else {
-                hoursWorked = this.getTimeDifferenceInHours(times.startTime, currentTime);
+                hoursWorked = getTimeDifferenceInHours(times.startTime, currentTime);
             }
 
-            this.setState(() => ({
-                money: (hoursWorked * eurosPerHour)
-            }));
+            let money: number = (hoursWorked * eurosPerHour)
+            this.props.updateMoney(money)
+            this.setState({money});
         }, 1000);
     }
 
@@ -56,24 +57,6 @@ export default class CoinCounterMoney extends Component<CoinCounterState, MoneyS
         if (this.interval) {
             clearInterval(this.interval);
         }
-    }
-
-    getTimeDifferenceInHours(firstDate: Date, secondDate: Date) {
-        const first = this.timedDate(firstDate)
-        let firstTime = first.getTime();
-
-        const second = this.timedDate(secondDate)
-        let secondTime = second.getTime();
-
-        return Math.abs(((firstTime - secondTime) / 60000) / 60) // difference in hours, e.g. 90min --> 1.5 hours.
-    }
-
-    // Returns a date that is "empty" e.g. it is the date of today, with only the time properties of the given date.
-    timedDate(fullDate: Date): Date {
-        const timeOnlyDate = new Date()
-        timeOnlyDate.setHours(fullDate.getHours(), fullDate.getMinutes(), fullDate.getSeconds())
-        timeOnlyDate.setHours(fullDate.getHours(), fullDate.getMinutes(), fullDate.getSeconds())
-        return timeOnlyDate;
     }
 
     render() {
