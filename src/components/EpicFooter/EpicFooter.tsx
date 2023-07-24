@@ -5,12 +5,8 @@ import {generateItemsInHTML} from "../../methods/methods";
 function EpicFooter() {
     return (
         <footer>
-            <div className="g-container">
-                <div className="g-wrap">
-                    <div className="g-footer">
-                        {generateItemsInHTML(50, (<div key={"bubble"} className="g-bubble"></div>))}
-                    </div>
-                </div>
+            <div className="g-footer">
+                {generateItemsInHTML(50, (<div key={"bubble"} className="g-bubble"></div>))}
             </div>
 
             <p className={"date"}>Coin Counter 2023</p>

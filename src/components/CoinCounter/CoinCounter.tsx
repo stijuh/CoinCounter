@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import {CoinCounterState} from "./domain/CoinCounterModels";
 import CoinCounterInput from "./input/CoinCounterInput";
 import CoinCounterMoney from "./money/CoinCounterMoney";
-import CoinCounterLap from "./money/CoinCounterLap";
+import CoinCounterLap from "./laps/CoinCounterLap";
 
 import "./CoinCounter.css"
 import CoinButton from "../Common/CoinButton";
 
 export default class CoinCounter extends Component<{}, CoinCounterState> {
 
-    private readonly coinCounterLapRef
+    private readonly coinCounterLapRef;
 
     constructor(props: {}) {
         super(props);
@@ -38,7 +38,6 @@ export default class CoinCounter extends Component<{}, CoinCounterState> {
     }
 
     handleAddLap = () => {
-        // Access the CoinCounterLap component using the ref and call its addLap function
         if (this.coinCounterLapRef.current) {
             this.coinCounterLapRef.current.addLap();
         }

@@ -27,19 +27,32 @@ export default class CoinCounterLap extends Component<CoinCounterLapProps, CoinC
         this.setState({lapTimes})
     }
 
+    handleRemoveLapTime(event: any, index: number) {
+        event.stopPropagation();
+        event.preventDefault();
+
+        const {lapTimes} = this.state;
+        lapTimes.splice(index, 1);
+        this.setState({lapTimes})
+    }
+
     render() {
         const {lapTimes} = this.state;
 
         let lapItems: Array<JSX.Element> = lapTimes.map((lap,i) => {
             return <li className={"lap-item"}>
+                <span>
                 {lap.date.toLocaleTimeString()} |
-                this lap: €{lap.currentMoney - lap.lastLapMoney},
-                total: €{lap.currentMoney}</li>
+                this lap: €{(lap.currentMoney - lap.lastLapMoney).toFixed(2)},
+                total: €{lap.currentMoney.toFixed(2)}
+                </span>
+                <span className="remove" onClick={(e) => this.handleRemoveLapTime(e, i)} tabIndex={0}>&times;</span>
+            </li>
         });
 
         return (
             <>
-                <span className={"lapContainer"}>
+                <span className={"lapContainer" + (lapTimes.length >= 3 ? " scrollable" : "")}>
                     <ul className={"laps"}>
                         {generateItemsInHTML(lapTimes.length, undefined, lapItems)}
                     </ul>
