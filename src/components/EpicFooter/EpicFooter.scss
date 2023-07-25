@@ -57,9 +57,10 @@ a.studioStoyLink:active {
 
 .g-footer {
   position: absolute;
-  bottom: 0;
-  height: 8.5rem;
-  width: 100%;
+  bottom: -10px;
+  right: -4px;
+  height: 10rem;
+  width: 110%;
   background: var(--backgroundColor);
   filter: blur(5px);
 

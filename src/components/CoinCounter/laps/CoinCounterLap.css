@@ -15,6 +15,7 @@
     font-size: 5rem;
     overflow-y: scroll;
 
+    transition: all 0.3s ease-in-out;
 }
 
 .laps {
@@ -76,5 +77,10 @@
     .lapContainer {
         width: 16rem;
         height: 8rem;
+        font-size: 4rem;
+    }
+
+    .lap-item {
+        font-size: 0.8rem;
     }
 }

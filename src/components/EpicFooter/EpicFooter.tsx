@@ -10,7 +10,7 @@ function EpicFooter() {
             </div>
 
             <p className={"date"}>Coin Counter 2023</p>
-            <a className={"studioStoyLink"} href="https://studiostoy.nl" target="_blank">$tudio $toy</a>
+            <a className={"studioStoyLink"} href="https://studiostoy.nl" target="_blank" rel="noreferrer">$tudio $toy</a>
         </footer>
     );
 }
