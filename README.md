@@ -2,7 +2,7 @@
 
 Hi there! If you want the Quick 'n Dirty intro, [see here](#quick-n-dirty)
 
-Otherwise, enjoy Cave Johnson's ~rant~ introduction of the Coin Counter.
+Otherwise, enjoy [Cave Johnson's](https://en.wikipedia.org/wiki/Cave_Johnson_(Portal)) ~rant~ introduction of the Coin Counter.
 
 Live version over at [studio stoy](https://coincounter.studiostoy.nl).
 
