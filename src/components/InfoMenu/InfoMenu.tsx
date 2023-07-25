@@ -6,6 +6,7 @@ interface CloseHandler {
 }
 
 export default class InfoMenu extends Component<CloseHandler, {}> {
+    // eslint-disable-next-line @typescript-eslint/no-useless-constructor
     constructor(props: CloseHandler) {
         super(props);
     }
@@ -20,7 +21,7 @@ export default class InfoMenu extends Component<CloseHandler, {}> {
     }
 
     handleKeyDown = (event: KeyboardEvent) => {
-        if (event.key === "Escape") {
+        if (event.key === "Escape" || event.key === "Enter") {
             this.props.handleClose();
         }
     };
@@ -30,6 +31,8 @@ export default class InfoMenu extends Component<CloseHandler, {}> {
             <>
                 <div className={"info-modal"}>
                     <div className={"info-modal-content"}>
+                        <span className="close" onClick={this.props.handleClose} tabIndex={0}>&times;</span>
+
                         <h1>Coin Counter</h1>
 
                         <ul className={"reasons-to-enlist"}>

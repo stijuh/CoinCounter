@@ -39,13 +39,13 @@ export default class EpicHeader extends Component<{}, InfoMenuModalState> {
         return (
             <>
                 <header>
-                    <div className={"logo"} tabIndex={0} onKeyDown={this.handleKeyDownEvent} onClick={this.toggleInfo}>
-                        <img src={logo} className="App-logo" alt="logo"/>
+                    <div className={"logo"} onClick={this.toggleInfo}>
+                        <img src={logo} className="App-logo" alt="logo" tabIndex={0} onKeyDown={this.handleKeyDownEvent}/>
                     </div>
                     <p className="text">Because time is money!</p>
                 </header>
 
-                <div className={"info-menu" + (isOpen ? " active" : "")} onClick={this.closeInfo}>
+                <div className={"info-menu" + (isOpen ? " active" : "")}>
                     <InfoMenu handleClose={this.closeInfo}/>
                 </div>
             </>
