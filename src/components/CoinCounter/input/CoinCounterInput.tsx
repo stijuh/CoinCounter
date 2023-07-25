@@ -140,7 +140,6 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
         if (earnedPerHour <= 0)
             salary = ""
 
-        // TODO: fix weird as hell start time curse?????
         return (
             <>
                 <CoinButton text={"Get ready"} onClick={this.toggleModal}></CoinButton>
@@ -157,7 +156,7 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
                         <div className={"timePickers"}>
                             <TimePicker
                                 identifier={startTimeId}
-                                defaultTime={format(times.startTime, "hh:mm:ss")}
+                                defaultTime={format(times.startTime, "kk:mm:ss")}
                                 description={"Start time:"}
                                 handleTimeChange={this.handleTimeChange}/>
                             <TimePicker
