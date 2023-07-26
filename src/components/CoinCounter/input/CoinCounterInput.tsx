@@ -42,20 +42,9 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
     }
 
     componentWillUnmount() {
-        // Remove event listener when the component unmounts to prevent memory leaks
+        // Remove event listeners when the component unmounts to prevent memory leaks
         window.removeEventListener('keydown', this.handleKeyDown);
-    }
-
-    handleKeyDown = (event: any) => {
-        if (event.key === "Escape") {
-            this.closeModal();
-        }
-    };
-
-    handleCloseKeyDown = (event: any) => {
-        if (event.key === "Enter"){
-            this.closeModal();
-        }
+        document.removeEventListener('click', this.handleDocumentClick);
     }
 
         /* ### Retrieving and setting data from localstorage. ### */
@@ -111,26 +100,52 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
                 break;
         }
 
-        this.setState({times})
+        this.setState({ times })
         localStorage.setItem('times', JSON.stringify(this.state.times));
     };
 
     makeSomeMoney = () => {
         this.props.readyForMoneyMaking(this.state.earnedPerHour, this.state.times);
-        this.toggleModal();
+        this.closeModal();
     }
 
-    toggleModal = () => {
-        this.setState(prevState => ({
-            isOpen: !prevState.isOpen
-        }));
+    /* event inputs */
+
+    handleKeyDown = (event: any) => {
+        if (event.key === "Escape") {
+            this.closeModal();
+        }
+    };
+
+    handleCloseKeyDown = (event: any) => {
+        if (event.key === "Enter"){
+            this.closeModal();
+        }
+    }
+
+    // The event listeners here are a little retarded, but I couldn't be bothered redo everything properly :D.
+    openModal = () => {
+        document.removeEventListener('click', this.handleDocumentClick);
+
+        this.setState(
+            { isOpen: true },
+            () => setTimeout(() => document.addEventListener('click', this.handleDocumentClick), 10)
+        );
     };
 
     closeModal = () => {
         this.setState(() => ({
             isOpen: false
         }));
+
+        document.removeEventListener('click', this.handleDocumentClick);
     }
+
+    handleDocumentClick = (event:any) => {
+        const modalContent = document.querySelector(".modal-content");
+        if (modalContent && !modalContent.contains(event.target) && this.state.isOpen)
+            this.closeModal();
+    };
 
     render() {
         const {isOpen, times, earnedPerHour} = this.state;
@@ -142,11 +157,11 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
 
         return (
             <>
-                <CoinButton text={"Get ready"} onClick={this.toggleModal}></CoinButton>
+                <CoinButton text={"Get ready"} onClick={this.openModal}></CoinButton>
 
                 <div className={"modal" + (isOpen ? " active" : "")}>
                     <div style={{visibility : (isOpen ? "visible" : "hidden")}} className={"modal-content" + (isOpen ? " active" : "")}>
-                        <span className="close" onKeyDown={this.handleCloseKeyDown} onClick={this.toggleModal} tabIndex={0}>&times;</span>
+                        <span className="close" onKeyDown={this.handleCloseKeyDown} onClick={this.closeModal} tabIndex={0}>&times;</span>
 
                         <label className={"hourDescription"}>Earned per hour:
                             <input className={"hourInput"} type="number" placeholder="0" value={salary}

@@ -1,10 +1,10 @@
 # 💰Coin Counter💰
 
+> Live version over at [studio stoy](https://coincounter.studiostoy.nl).
+
 Hi there! If you want the Quick 'n Dirty intro, [see here](#quick-n-dirty)
 
-Otherwise, enjoy [Cave Johnson's](https://en.wikipedia.org/wiki/Cave_Johnson_(Portal)) ~rant~ introduction of the Coin Counter.
-
-Live version over at [studio stoy](https://coincounter.studiostoy.nl).
+Otherwise, enjoy [Cave Johnson's](https://en.wikipedia.org/wiki/Cave_Johnson_(Portal)) ~~rant~~ introduction of the Coin Counter.
 
 ___
 
@@ -27,7 +27,14 @@ ___
 
 ## 💰Quick 'n Dirty💰
 
-With the Coin Counter, you can view how much you earn in real time, which pauses when you have your breaks. All in an
-epic interface.
+With the Coin Counter, you can:
+- view how much you earn in real time
+- The real time count pauses when you have your breaks
+- Feast your eyes upon an epic interface
+- Set laps to see the amount you made within a time frame
+- Enjoy Cave Johnson textually screaming at you again
 
 ![img.png](raw/images/coin.png)
+
+
+2023 [Studio Stoy](https://studiostoy.nl)

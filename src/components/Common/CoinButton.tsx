@@ -3,7 +3,7 @@ import './CoinButton.css'; // Import the CSS file for the button styling
 
 interface CoinButtonProps {
     text: string;
-    onClick: () => void;
+    onClick: (event:any) => void;
 }
 
 const Button: React.FC<CoinButtonProps> = ({text, onClick}) => {

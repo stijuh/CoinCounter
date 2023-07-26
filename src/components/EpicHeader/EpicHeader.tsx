@@ -16,21 +16,37 @@ export default class EpicHeader extends Component<{}, InfoMenuModalState> {
         }
     }
 
-    toggleInfo = () => {
-        this.setState(prevState => ({
-            isOpen: !prevState.isOpen
-        }));
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleDocumentClick);
+    }
+
+    handleKeyDownEvent = (event:any) => {
+        if (event.key === "Enter")
+            this.openInfo();
+    }
+
+    handleDocumentClick = (event:any) => {
+        const modalContent = document.querySelector(".info-modal-content");
+        if (modalContent && !modalContent.contains(event.target) && this.state.isOpen)
+            this.closeInfo();
+    };
+
+    // The event listeners here are a little retarded, but I couldn't be bothered redo everything properly :D.
+    openInfo = () => {
+        document.removeEventListener('click', this.handleDocumentClick);
+
+        this.setState(
+            { isOpen: true },
+            () => setTimeout(() => document.addEventListener('click', this.handleDocumentClick), 10)
+        );
     };
 
     closeInfo = () => {
         this.setState(() => ({
             isOpen: false
         }));
-    };
 
-    handleKeyDownEvent = (event:any) => {
-        if (event.key === "Enter")
-            this.toggleInfo();
+        document.removeEventListener('click', this.handleDocumentClick);
     }
 
     render() {
@@ -39,7 +55,7 @@ export default class EpicHeader extends Component<{}, InfoMenuModalState> {
         return (
             <>
                 <header>
-                    <div className={"logo"} onClick={this.toggleInfo}>
+                    <div className={"logo"} onClick={this.openInfo}>
                         <img src={logo} className="App-logo" alt="logo" tabIndex={0} onKeyDown={this.handleKeyDownEvent}/>
                     </div>
                     <p className="text">Because time is money!</p>

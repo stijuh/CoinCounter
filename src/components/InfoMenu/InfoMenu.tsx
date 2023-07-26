@@ -31,7 +31,7 @@ export default class InfoMenu extends Component<CloseHandler, {}> {
             <>
                 <div className={"info-modal"}>
                     <div className={"info-modal-content"}>
-                        <span className="close" onClick={this.props.handleClose} tabIndex={0}>&times;</span>
+                        <span className="close" onClick={this.props.handleClose} tabIndex={1}>&times;</span>
 
                         <h1>Coin Counter</h1>
 
