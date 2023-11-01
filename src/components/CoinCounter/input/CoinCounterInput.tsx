@@ -79,6 +79,8 @@ export default class CoinCounterInput extends Component<CoinCounterInputUpdate, 
 
     handleTimeChange = (event: ChangeEvent<HTMLInputElement>, identifier: string) => {
         const time = String(event.target.value); // expecting it in the format of 00:00:00 (hours:minutes:seconds).
+
+        console.log(time);
         let timeProperties = time.split(":")
 
         let dateComparison = new Date(2000, 1, 1, 0, 0, 0);

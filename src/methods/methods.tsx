@@ -4,10 +4,10 @@ export function getTimeDifferenceInHours(firstDate: Date, secondDate: Date) {
     if (firstDate === undefined || secondDate === undefined)
         return 0;
 
-    const first = timedDate(firstDate)
+    const first = timeFromDate(firstDate)
     let firstTime = first.getTime();
 
-    const second = timedDate(secondDate)
+    const second = timeFromDate(secondDate)
     let secondTime = second.getTime();
 
     return Math.abs(((firstTime - secondTime) / 60000) / 60) // difference in hours, e.g. 90min --> 1.5 hours.
@@ -18,10 +18,10 @@ export function getTimeDifferenceFormatted(firstDate: Date, secondDate: Date) {
     if (firstDate === undefined || secondDate === undefined)
         return 0;
 
-    const first = timedDate(firstDate)
+    const first = timeFromDate(firstDate)
     let firstTime = Math.floor(first.getTime());
 
-    const second = timedDate(secondDate)
+    const second = timeFromDate(secondDate)
     let secondTime = Math.floor(second.getTime());
 
     let seconds = Math.abs((firstTime - secondTime) / 1000)
@@ -45,7 +45,7 @@ export function getTimeDifferenceFormatted(firstDate: Date, secondDate: Date) {
 }
 
 // Returns a date that is "empty" e.g. it is the date of today, with only the time properties of the given date.
-export function timedDate(fullDate: Date): Date {
+export function timeFromDate(fullDate: Date): Date {
     const timeOnlyDate = new Date()
     timeOnlyDate.setHours(fullDate.getHours(), fullDate.getMinutes(), fullDate.getSeconds())
     timeOnlyDate.setHours(fullDate.getHours(), fullDate.getMinutes(), fullDate.getSeconds())

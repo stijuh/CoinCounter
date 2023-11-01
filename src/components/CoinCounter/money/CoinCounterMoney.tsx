@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {CoinCounterProps, MoneyState} from "../domain/CoinCounterModels";
 import "./CoinCounterMoney.css"
-import {getTimeDifferenceInHours, timedDate} from "../../../methods/methods";
+import {getTimeDifferenceInHours, timeFromDate} from "../../../methods/methods";
 
 export default class CoinCounterMoney extends Component<CoinCounterProps, MoneyState> {
     private interval: NodeJS.Timeout | undefined;
@@ -27,20 +27,20 @@ export default class CoinCounterMoney extends Component<CoinCounterProps, MoneyS
             let hoursWorked: number, currentTime = new Date();
 
             // It is after the specified end time.
-            if (currentTime > timedDate(times.endTime)) {
+            if (currentTime > timeFromDate(times.endTime)) {
                 hoursWorked = getTimeDifferenceInHours(times.startTime, times.endTime);
                 hoursWorked -= getTimeDifferenceInHours(times.breakFromTime, times.breakToTime);
             }
             // It is before the specified start time.
-            else if (currentTime < timedDate(times.startTime)) {
+            else if (currentTime < timeFromDate(times.startTime)) {
                 hoursWorked = 0;
             }
             // It is during the specified break time.
-            else if (timedDate(times.breakFromTime) < currentTime && currentTime < timedDate(times.breakToTime)) {
+            else if (timeFromDate(times.breakFromTime) < currentTime && currentTime < timeFromDate(times.breakToTime)) {
                 // Take the hours of startTime till breakFromTime.
                 hoursWorked = getTimeDifferenceInHours(times.startTime, times.breakFromTime)
-                // It is after the specified break time but still work time.
-            } else if (currentTime > timedDate(times.breakToTime)) {
+            // Start time is after the break time, and it is currently after the specified break time but still work time.
+            } else if (timeFromDate(times.startTime) < timeFromDate(times.breakToTime) && currentTime > timeFromDate(times.breakToTime)) {
                 hoursWorked = getTimeDifferenceInHours(times.startTime, times.breakFromTime) +
                     getTimeDifferenceInHours(times.breakToTime, currentTime);
             } else {
