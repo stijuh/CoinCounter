@@ -87,7 +87,7 @@ a.studioStoyLink:active {
     top: #{(10 + random(100))}px;
     width: $width;
     height: $width;
-    animation: moveToTop #{(random(500) + 500) / 100}s ease-in-out -#{random(2000)/1000}s infinite;
+    animation: moveToTop #{calc((random(500) + 500) / 100)}s ease-in-out -#{calc(random(2000)/1000)}s infinite;
   }
 }
 
